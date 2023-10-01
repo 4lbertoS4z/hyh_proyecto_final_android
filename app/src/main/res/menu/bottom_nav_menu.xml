@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_first_dish"
+        android:icon="@drawable/first_dish_icon"
+        android:title="Entrantes" />
+
+    <item
+        android:id="@+id/navigation_second_dish"
+        android:icon="@drawable/second_dish_icon"
+        android:title="Segundos" />
+
+    <item
+        android:id="@+id/navigation_dessert"
+        android:icon="@drawable/dessert_icon"
+        android:title="Postres" />
+    <item
+        android:id="@+id/navigation_kcal_calculator"
+        android:icon="@drawable/kcal_list_icon"
+        android:title="Kcal" />
+</menu>

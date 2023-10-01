@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/navigation_first_dish">
+
+    <fragment
+        android:id="@+id/navigation_first_dish"
+        android:name="com.example.healthytaste.presentation.fragment.FirstDishFragment"
+        android:label="Entrantes"
+        tools:layout="@layout/fragment_first_dish" />
+    <fragment
+        android:id="@+id/navigation_second_dish"
+        android:name="com.example.healthytaste.presentation.fragment.SecondDishFragment"
+        android:label="Segundos"
+        tools:layout="@layout/fragment_second_dish" />
+    <fragment
+        android:id="@+id/navigation_dessert"
+        android:name="com.example.healthytaste.presentation.fragment.DessertFragment"
+        android:label="Postres"
+        tools:layout="@layout/fragment_dessert" />
+    <fragment
+        android:id="@+id/navigation_kcal_calculator"
+        android:name="com.example.healthytaste.presentation.fragment.KcalCalculatorFragment"
+        android:label="Kcal"
+        tools:layout="@layout/fragment_kcal_calculator" />
+
+</navigation>
