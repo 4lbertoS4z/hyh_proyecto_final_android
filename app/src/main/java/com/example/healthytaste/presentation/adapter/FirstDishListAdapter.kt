@@ -11,7 +11,7 @@ import com.example.healthytaste.model.First
 class FirstDishListAdapter:RecyclerView.Adapter<FirstDishListAdapter.FirstDishViewHolder>() {
 
     private var dessertsDishList: List<First> = emptyList()
-    private var onClickListener: (First) -> Unit = {}
+     var onClickListener: (First) -> Unit = {}
 
     override fun onCreateViewHolder(
         parent: ViewGroup,

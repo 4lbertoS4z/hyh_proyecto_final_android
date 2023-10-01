@@ -3,9 +3,7 @@ package com.example.healthytaste.model
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
-data class FirstDishResponse(
-@SerializedName("desserts") val first: List<First>
-)
+class FirstDishResponse: ArrayList<First>()
 @Keep
 data class First(
 

@@ -5,6 +5,6 @@ import com.example.healthytaste.model.First
 
 class FirstDishRemoteImpl(private val healthyTasteService: HealthyTasteService) {
     suspend fun getFirstDish(): List<First> {
-        return healthyTasteService.getFirstDish().first
+        return healthyTasteService.getFirstDish()
     }
 }

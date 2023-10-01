@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.healthytaste.R
 import com.example.healthytaste.databinding.FragmentFirstDishBinding
@@ -27,7 +28,7 @@ class FirstDishFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         return binding.root
     }
@@ -45,8 +46,8 @@ class FirstDishFragment : Fragment() {
         binding.rvFirstDish.adapter = firstDishListAdapter
         binding.rvFirstDish.layoutManager = LinearLayoutManager(requireContext())
 
-     /*   firstDishListAdapter.onClickListener = { firstDish ->
-            findNavController().navigate(
+       /* firstDishListAdapter.onClickListener = { firstDish ->
+            findNavController().navigate(R.id.navigation_dessert
 
             )
         }*/
