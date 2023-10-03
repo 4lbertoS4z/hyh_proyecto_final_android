@@ -9,7 +9,21 @@
         android:id="@+id/navigation_first_dish"
         android:name="com.example.healthytaste.presentation.fragment.FirstDishFragment"
         android:label="Entrantes"
-        tools:layout="@layout/fragment_first_dish" />
+        tools:layout="@layout/fragment_first_dish">
+        <action
+            android:id="@+id/action_firstDistFragment_to_first_dish_detail_fragment"
+            app:destination="@+id/firstDishDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstDishDetailFragment"
+        android:name="com.example.healthytaste.presentation.fragment.FirstDishDetailFragment"
+        tools:layout="@layout/fragment_first_dish_detail">
+
+        <argument
+            android:name="firstDishId"
+            app:argType="integer" />
+
+    </fragment>
     <fragment
         android:id="@+id/navigation_second_dish"
         android:name="com.example.healthytaste.presentation.fragment.SecondDishFragment"

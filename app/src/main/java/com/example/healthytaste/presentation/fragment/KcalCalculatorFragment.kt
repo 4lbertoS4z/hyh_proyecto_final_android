@@ -10,16 +10,14 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.healthytaste.KCAL_CALCULATOR
 import com.example.healthytaste.databinding.FragmentKcalCalculatorBinding
-import com.example.healthytaste.presentation.viewModel.KcalCalculatorViewModel
 
 
 class KcalCalculatorFragment : Fragment() {
     private var _binding: FragmentKcalCalculatorBinding? = null
     private val binding
-        get() = _binding ?: throw IllegalStateException("FragmentNewsBinding is not available.")
+        get() = _binding ?: throw IllegalStateException("FragmentKcalBinding is not available.")
 
 
     override fun onCreateView(
@@ -27,20 +25,31 @@ class KcalCalculatorFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val homeViewModel =
-            ViewModelProvider(this)[KcalCalculatorViewModel::class.java]
 
         _binding = FragmentKcalCalculatorBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        binding.swipeRefresh.setOnRefreshListener {
-            binding.webView.reload()
-        }
+        swipeRefresh()
         //webView
 
         binding.webView.webChromeClient = object : WebChromeClient() {
 
         }
+        webClient()
+
+
+        val settings = binding.webView.settings
+        settings.javaScriptEnabled = true
+
+        binding.webView.settings.domStorageEnabled = true
+        binding.webView.loadUrl(KCAL_CALCULATOR)
+
+
+
+        return root
+    }
+
+    private fun webClient() {
         binding.webView.webViewClient = object : WebViewClient() {
 
             override fun shouldOverrideUrlLoading(
@@ -61,17 +70,12 @@ class KcalCalculatorFragment : Fragment() {
             }
 
         }
-
-        val settings = binding.webView.settings
-        settings.javaScriptEnabled = true
-
-        binding.webView.settings.domStorageEnabled = true
-        binding.webView.loadUrl(KCAL_CALCULATOR)
-
-
-
-        return root
     }
 
+    private fun swipeRefresh(){
+    binding.swipeRefresh.setOnRefreshListener {
+        binding.webView.reload()
+    }
+}
 
 }

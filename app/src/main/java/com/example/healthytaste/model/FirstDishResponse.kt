@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 class FirstDishResponse: ArrayList<First>()
 @Keep
 data class First(
-
+    val id: Long,
     val detalles: Detalles,
     val image: String,
     val nombre: String

@@ -46,15 +46,17 @@ class FirstDishFragment : Fragment() {
         binding.rvFirstDish.adapter = firstDishListAdapter
         binding.rvFirstDish.layoutManager = LinearLayoutManager(requireContext())
 
-       /* firstDishListAdapter.onClickListener = { firstDish ->
-            findNavController().navigate(R.id.navigation_dessert
-
+        firstDishListAdapter.onClickListener = { firstDish ->
+            findNavController().navigate(
+                FirstDishFragmentDirections.actionFirstDistFragmentToFirstDishDetailFragment(
+                    firstDish.id.toInt()
+                )
             )
-        }*/
+        }
     }
 
     private fun initViewModel() {
-        firstDishViewModel.getFirstDishLiveData().observe(viewLifecycleOwner){state ->
+        firstDishViewModel.getFirstDishLiveData().observe(viewLifecycleOwner) { state ->
             handleFirstDishListState(state)
         }
     }
@@ -79,10 +81,10 @@ class FirstDishFragment : Fragment() {
 
     private fun showErrorDialog(error: String) {
         MaterialAlertDialogBuilder(requireContext())
-            .setTitle(R.string.error_message)
+            .setTitle(R.string.error)
             .setMessage(error)
-            .setPositiveButton(R.string.ok_action, null)
-            .setNegativeButton(R.string.retry_action) { dialog, witch ->
+            .setPositiveButton(R.string.action_ok, null)
+            .setNegativeButton(R.string.action_retry) { dialog, witch ->
                 firstDishViewModel.fetchFirstDishList()
             }
             .show()

@@ -10,7 +10,7 @@ import com.example.healthytaste.model.First
 
 class FirstDishListAdapter:RecyclerView.Adapter<FirstDishListAdapter.FirstDishViewHolder>() {
 
-    private var dessertsDishList: List<First> = emptyList()
+    private var firstDishList: List<First> = emptyList()
      var onClickListener: (First) -> Unit = {}
 
     override fun onCreateViewHolder(
@@ -22,11 +22,11 @@ class FirstDishListAdapter:RecyclerView.Adapter<FirstDishListAdapter.FirstDishVi
     }
 
     override fun onBindViewHolder(holder:FirstDishViewHolder, position: Int) {
-        val item = dessertsDishList[position]
+        val item = firstDishList[position]
 
-        /*   holder.rootView.setOnClickListener {
+           holder.rootView.setOnClickListener {
             onClickListener.invoke(item)
-        } */
+        }
         holder.nameTextView.text = item.nombre
 
         Glide.with(holder.firstDishImageView)
@@ -35,12 +35,12 @@ class FirstDishListAdapter:RecyclerView.Adapter<FirstDishListAdapter.FirstDishVi
     }
 
     override fun getItemCount(): Int {
-        return dessertsDishList.size
+        return firstDishList.size
     }
 
     @SuppressLint("NotifyDataSetChanged")
     fun submitList(list: List<First>) {
-        dessertsDishList = list
+        firstDishList = list
         notifyDataSetChanged()
     }
 
