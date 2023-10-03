@@ -21,6 +21,7 @@ class FirstDishListAdapter:RecyclerView.Adapter<FirstDishListAdapter.FirstDishVi
         return FirstDishViewHolder(binding)
     }
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onBindViewHolder(holder:FirstDishViewHolder, position: Int) {
         val item = firstDishList[position]
 
