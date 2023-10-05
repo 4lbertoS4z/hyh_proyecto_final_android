@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.healthytaste.databinding.FirstDishListBinding
+import com.example.healthytaste.databinding.FirstDishCardListBinding
 import com.example.healthytaste.model.First
 
 class FirstDishListAdapter:RecyclerView.Adapter<FirstDishListAdapter.FirstDishViewHolder>() {
@@ -17,7 +17,7 @@ class FirstDishListAdapter:RecyclerView.Adapter<FirstDishListAdapter.FirstDishVi
         parent: ViewGroup,
         viewType: Int
     ): FirstDishViewHolder {
-        val binding = FirstDishListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = FirstDishCardListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return FirstDishViewHolder(binding)
     }
 
@@ -28,7 +28,7 @@ class FirstDishListAdapter:RecyclerView.Adapter<FirstDishListAdapter.FirstDishVi
            holder.rootView.setOnClickListener {
             onClickListener.invoke(item)
         }
-        holder.nameTextView.text = item.nombre
+        holder.nameTextView.text = item.name
 
         Glide.with(holder.firstDishImageView)
             .load(item.image)
@@ -45,7 +45,7 @@ class FirstDishListAdapter:RecyclerView.Adapter<FirstDishListAdapter.FirstDishVi
         notifyDataSetChanged()
     }
 
-    inner class FirstDishViewHolder(binding:FirstDishListBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class FirstDishViewHolder(binding:FirstDishCardListBinding): RecyclerView.ViewHolder(binding.root) {
         val rootView = binding.root
         val nameTextView = binding.tvFirstDishName
         val firstDishImageView = binding.ivFirstDishPlate

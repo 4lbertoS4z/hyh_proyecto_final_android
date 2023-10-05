@@ -1,13 +1,12 @@
 package com.example.healthytaste.domain.usecase.firstdishusecase
 
-import com.example.healthytaste.domain.FirstDishRepository
+import com.example.healthytaste.domain.DishRepository
 import com.example.healthytaste.model.First
-import com.example.healthytaste.model.FirstDishResponse
 
 class GetFirstDishDetailUseCase(
-    private val firstDishRepository: FirstDishRepository
+    private val dishRepository: DishRepository
 ) {
     suspend fun execute(firstDishId: Int): First {
-        return firstDishRepository.getOneFirstDish(firstDishId)
+        return dishRepository.getOneFirstDish(firstDishId)
     }
 }

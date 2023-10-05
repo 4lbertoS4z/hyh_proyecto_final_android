@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
     android:padding="8dp">
 
     <ImageView
@@ -30,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_dessert_dish_plate"
         app:layout_constraintTop_toTopOf="@+id/iv_dessert_dish_plate"
-        tools:text="Dish title" />
+        tools:text="Dish taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaitle" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -67,16 +67,16 @@ class FirstDishDetailFragment : Fragment() {
     }
 
     private fun initUI(firstDish: First) {
-        binding.textViewNombre.text = firstDish.nombre
+        binding.textViewNombre.text = firstDish.name
         Glide.with(requireContext())
             .load(firstDish.image)
             .into(binding.imageViewReceta)
-        binding.textViewIngredientes.text = firstDish.detalles.ingredientes.toString()
-        binding.textViewCalorias.text = firstDish.detalles.apto
-        binding.textViewElaboracion.text = firstDish.detalles.elaboracion
+        binding.textViewIngredientes.text = firstDish.details.ingredients.toString()
+        binding.textViewCalorias.text = firstDish.details.apto
+        binding.textViewElaboracion.text = firstDish.details.elaboration
 
         // Obtén la ID del video de YouTube y guárdala en videoId
-        videoId = firstDish.detalles.urlVideo ?: ""
+        videoId = firstDish.details.urlVideo ?: ""
 
         // Configura el reproductor de YouTube
         val youTubePlayerView = binding.youtubePlayerView

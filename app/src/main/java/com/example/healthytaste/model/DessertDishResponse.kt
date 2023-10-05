@@ -3,17 +3,17 @@ package com.example.healthytaste.model
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
-class FirstDishResponse: ArrayList<First>()
+class DessertDishResponse: ArrayList<DessertDish>()
 @Keep
-data class First(
+data class DessertDish(
     val id: Long,
-    val details: FirstDishDetails,
+    val details: DessertDishDetails,
     val image: String,
     val name: String
 )
 
 @Keep
-data class FirstDishDetails(
+data class DessertDishDetails(
     val apto: String,
     val elaboration: String,
     val ingredients: List<String>,
