@@ -8,10 +8,12 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.healthytaste.R
-import com.example.healthytaste.databinding.FragmentFirstDishDetailBinding
+import com.example.healthytaste.databinding.FragmentDessertDishDetailBinding
+import com.example.healthytaste.model.DessertDish
 import com.example.healthytaste.model.First
 import com.example.healthytaste.model.ResourceState
-import com.example.healthytaste.presentation.viewModel.FirstDishDetailState
+import com.example.healthytaste.presentation.viewModel.DessertDishDetailState
+import com.example.healthytaste.presentation.viewModel.DessertDishViewModel
 import com.example.healthytaste.presentation.viewModel.FirstDishViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
@@ -19,64 +21,63 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.Abs
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 
-class FirstDishDetailFragment : Fragment() {
+class DessertDishDetailFragment : Fragment() {
     private var videoId: String = ""
     private var isPlayerReady: Boolean = false
 
-    private val binding: FragmentFirstDishDetailBinding by lazy {
-        FragmentFirstDishDetailBinding.inflate(layoutInflater)
+    private val binding:FragmentDessertDishDetailBinding by lazy {
+        FragmentDessertDishDetailBinding.inflate(layoutInflater)
     }
-
-    private val args: FirstDishDetailFragmentArgs by navArgs()
-    private val fistDishViewModel: FirstDishViewModel by activityViewModel()
-    override fun onCreateView(
+    private val args: DessertDishDetailFragmentArgs by navArgs()
+    private val dessertDishViewModel: DessertDishViewModel by activityViewModel()
+            override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
+        // Inflate the layout for this fragment
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViewModel()
-        fistDishViewModel.fetchFirstDishDetail(args.firstDishId)
+        dessertDishViewModel.fetchDessertDishDetail(args.dessertDishId)
     }
 
     private fun initViewModel() {
-        fistDishViewModel.getFirstOneDishLiveData().observe(viewLifecycleOwner) { state ->
-            handleFistDishDetailState(state)
+        dessertDishViewModel.getDessertDishDetailLiveData().observe(viewLifecycleOwner) { state ->
+            handleDessertDishDetailState(state)
         }
     }
 
-    private fun handleFistDishDetailState(state: FirstDishDetailState) {
+    private fun handleDessertDishDetailState(state: DessertDishDetailState) {
         when (state) {
             is ResourceState.Loading -> {
-                binding.pbFirstDishDetail.visibility = View.VISIBLE
+                binding.pbDessertDishDetail.visibility = View.VISIBLE
             }
 
             is ResourceState.Success -> {
-                binding.pbFirstDishDetail.visibility = View.GONE
+                binding.pbDessertDishDetail.visibility = View.GONE
                 initUI(state.result)
             }
 
             is ResourceState.Error -> {
-                binding.pbFirstDishDetail.visibility = View.GONE
+                binding.pbDessertDishDetail.visibility = View.GONE
                 showErrorDialog(state.error)
             }
         }
     }
 
-    private fun initUI(firstDish: First) {
-        binding.textViewNombre.text = firstDish.name
+    private fun initUI(dessertDish: DessertDish) {
+        binding.textViewNombre.text = dessertDish.name
         Glide.with(requireContext())
-            .load(firstDish.image)
+            .load(dessertDish.image)
             .into(binding.imageViewReceta)
-        binding.textViewIngredientes.text = firstDish.details.ingredients.toString()
-        binding.textViewCalorias.text = firstDish.details.apto
-        binding.textViewElaboracion.text = firstDish.details.elaboration
+        binding.textViewIngredientes.text = dessertDish.details.ingredients.toString()
+        binding.textViewCalorias.text = dessertDish.details.apto
+        binding.textViewElaboracion.text = dessertDish.details.elaboration
 
         // Obtén la ID del video de YouTube y guárdala en videoId
-        videoId = firstDish.details.urlVideo ?: ""
+        videoId = dessertDish.details.urlVideo ?: ""
 
         // Configura el reproductor de YouTube
         val youTubePlayerView = binding.youtubePlayerView
@@ -102,7 +103,7 @@ class FirstDishDetailFragment : Fragment() {
             .setMessage(error)
             .setPositiveButton(R.string.action_ok, null)
             .setNegativeButton(R.string.action_retry) { dialog, witch ->
-                fistDishViewModel.fetchFirstDishList()
+                dessertDishViewModel.fetchDessertDishList()
             }
             .show()
     }

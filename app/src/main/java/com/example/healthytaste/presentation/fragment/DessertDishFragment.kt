@@ -8,23 +8,22 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.healthytaste.R
-import com.example.healthytaste.databinding.FragmentSecondDishBinding
+import com.example.healthytaste.databinding.FragmentDessertBinding
 import com.example.healthytaste.model.ResourceState
-import com.example.healthytaste.presentation.adapter.SecondDishLlistAdapter
-import com.example.healthytaste.presentation.viewModel.SecondDishListState
-import com.example.healthytaste.presentation.viewModel.SecondDishViewModel
+import com.example.healthytaste.presentation.adapter.DessertDishListAdapter
+import com.example.healthytaste.presentation.viewModel.DessertDishListState
+import com.example.healthytaste.presentation.viewModel.DessertDishViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 
-class SecondDishFragment : Fragment() {
+class DessertDishFragment : Fragment() {
 
-    private val binding: FragmentSecondDishBinding by lazy {
-        FragmentSecondDishBinding.inflate(layoutInflater)
+    private val binding: FragmentDessertBinding by lazy {
+        FragmentDessertBinding.inflate(layoutInflater)
     }
-    private val secondDishListAdapter = SecondDishLlistAdapter()
-    private val secondDishViewModel: SecondDishViewModel by activityViewModel()
-
+    private val dessertDishListAdapter = DessertDishListAdapter()
+    private val dessertDishViewModel: DessertDishViewModel by activityViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,41 +39,41 @@ class SecondDishFragment : Fragment() {
         initViewModel()
         initUI()
 
-        secondDishViewModel.fetchSecondDishList()
+        dessertDishViewModel.fetchDessertDishList()
     }
 
     private fun initUI() {
-        binding.rvSecondDish.adapter = secondDishListAdapter
-        binding.rvSecondDish.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvDessertDish.adapter = dessertDishListAdapter
+        binding.rvDessertDish.layoutManager = LinearLayoutManager(requireContext())
 
-        secondDishListAdapter.onClickListener = { secondDish ->
+        dessertDishListAdapter.onClickListener = { dessertDish ->
             findNavController().navigate(
-               SecondDishFragmentDirections.actionNavigationSecondDishToNavigationSecondDishDetailFragment(
-                    secondDish.id.toInt()
+                DessertDishFragmentDirections.actionNavigationDessertToNavigationDessertDishDetailFragment(
+                    dessertDish.id.toInt()
                 )
             )
         }
     }
 
     private fun initViewModel() {
-        secondDishViewModel.getSecondDishLiveData().observe(viewLifecycleOwner) { state ->
-            handleSecondDishListState(state)
+        dessertDishViewModel.getDessertDishLiveData().observe(viewLifecycleOwner) { state ->
+            handleDessertDishListState(state)
         }
     }
 
-    private fun handleSecondDishListState(state: SecondDishListState) {
+    private fun handleDessertDishListState(state: DessertDishListState) {
         when (state) {
             is ResourceState.Loading -> {
-                binding.pbSecondDishLoading.visibility = View.VISIBLE
+                binding.pbDessertDishLoading.visibility = View.VISIBLE
             }
 
             is ResourceState.Success -> {
-                binding.pbSecondDishLoading.visibility = View.GONE
-                secondDishListAdapter.submitList(state.result)
+                binding.pbDessertDishLoading.visibility = View.GONE
+                dessertDishListAdapter.submitList(state.result)
             }
 
             is ResourceState.Error -> {
-                binding.pbSecondDishLoading.visibility = View.GONE
+                binding.pbDessertDishLoading.visibility = View.GONE
                 showErrorDialog(state.error)
             }
         }
@@ -86,8 +85,9 @@ class SecondDishFragment : Fragment() {
             .setMessage(error)
             .setPositiveButton(R.string.action_ok, null)
             .setNegativeButton(R.string.action_retry) { dialog, witch ->
-                secondDishViewModel.fetchSecondDishList()
+                dessertDishViewModel.fetchDessertDishList()
             }
             .show()
     }
+
 }

@@ -50,7 +50,7 @@ class FirstDishViewModel(
         }
     }
 
-    fun fetchOneFirstDishList(firstDishId: Int) {
+    fun fetchFirstDishDetail(firstDishId: Int) {
         firstDishDetailMutableLiveData.value = ResourceState.Loading()
         viewModelScope.launch(Dispatchers.IO) {
             try {

@@ -27,7 +27,7 @@ class SecondDishViewModel (
     fun getSecondDishLiveData(): LiveData<SecondDishListState> {
         return secondDishMutableLiveData
     }
-    fun getSecondOneDishLiveData(): LiveData<SecondDishDetailState> {
+    fun getSecondDishDetailLiveData(): LiveData<SecondDishDetailState> {
         return secondDishDetailMutableLiveData
     }
 

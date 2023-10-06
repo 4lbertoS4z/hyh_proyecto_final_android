@@ -8,75 +8,74 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.healthytaste.R
-import com.example.healthytaste.databinding.FragmentFirstDishDetailBinding
-import com.example.healthytaste.model.First
+import com.example.healthytaste.databinding.FragmentSecondDishDetailBinding
 import com.example.healthytaste.model.ResourceState
-import com.example.healthytaste.presentation.viewModel.FirstDishDetailState
-import com.example.healthytaste.presentation.viewModel.FirstDishViewModel
+import com.example.healthytaste.model.SecondDish
+import com.example.healthytaste.presentation.viewModel.SecondDishDetailState
+import com.example.healthytaste.presentation.viewModel.SecondDishViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 
-class FirstDishDetailFragment : Fragment() {
+class SecondDishDetailFragment : Fragment() {
     private var videoId: String = ""
     private var isPlayerReady: Boolean = false
 
-    private val binding: FragmentFirstDishDetailBinding by lazy {
-        FragmentFirstDishDetailBinding.inflate(layoutInflater)
+    private val binding: FragmentSecondDishDetailBinding by lazy {
+        FragmentSecondDishDetailBinding.inflate(layoutInflater)
     }
-
-    private val args: FirstDishDetailFragmentArgs by navArgs()
-    private val fistDishViewModel: FirstDishViewModel by activityViewModel()
+    private val args: SecondDishDetailFragmentArgs by navArgs()
+    private val secondDishViewModel: SecondDishViewModel by activityViewModel()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViewModel()
-        fistDishViewModel.fetchFirstDishDetail(args.firstDishId)
+        secondDishViewModel.fetchSecondDishDetail(args.secondDishId)
     }
 
     private fun initViewModel() {
-        fistDishViewModel.getFirstOneDishLiveData().observe(viewLifecycleOwner) { state ->
+        secondDishViewModel.getSecondDishDetailLiveData().observe(viewLifecycleOwner) { state ->
             handleFistDishDetailState(state)
         }
     }
 
-    private fun handleFistDishDetailState(state: FirstDishDetailState) {
+    private fun handleFistDishDetailState(state: SecondDishDetailState) {
         when (state) {
             is ResourceState.Loading -> {
-                binding.pbFirstDishDetail.visibility = View.VISIBLE
+                binding.pbSecondDishDetail.visibility = View.VISIBLE
             }
 
             is ResourceState.Success -> {
-                binding.pbFirstDishDetail.visibility = View.GONE
+                binding.pbSecondDishDetail.visibility = View.GONE
                 initUI(state.result)
             }
 
             is ResourceState.Error -> {
-                binding.pbFirstDishDetail.visibility = View.GONE
+                binding.pbSecondDishDetail.visibility = View.GONE
                 showErrorDialog(state.error)
             }
         }
     }
 
-    private fun initUI(firstDish: First) {
-        binding.textViewNombre.text = firstDish.name
+    private fun initUI(secondDish: SecondDish) {
+        binding.textViewNombre.text = secondDish.name
         Glide.with(requireContext())
-            .load(firstDish.image)
+            .load(secondDish.image)
             .into(binding.imageViewReceta)
-        binding.textViewIngredientes.text = firstDish.details.ingredients.toString()
-        binding.textViewCalorias.text = firstDish.details.apto
-        binding.textViewElaboracion.text = firstDish.details.elaboration
+        binding.textViewIngredientes.text = secondDish.details.ingredients.toString()
+        binding.textViewCalorias.text = secondDish.details.apto
+        binding.textViewElaboracion.text = secondDish.details.elaboration
 
         // Obtén la ID del video de YouTube y guárdala en videoId
-        videoId = firstDish.details.urlVideo ?: ""
+        videoId = secondDish.details.urlVideo ?: ""
 
         // Configura el reproductor de YouTube
         val youTubePlayerView = binding.youtubePlayerView
@@ -102,7 +101,7 @@ class FirstDishDetailFragment : Fragment() {
             .setMessage(error)
             .setPositiveButton(R.string.action_ok, null)
             .setNegativeButton(R.string.action_retry) { dialog, witch ->
-                fistDishViewModel.fetchFirstDishList()
+                secondDishViewModel.fetchSecondDishList()
             }
             .show()
     }
