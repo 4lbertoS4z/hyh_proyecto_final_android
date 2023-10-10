@@ -66,13 +66,15 @@ class SecondDishDetailFragment : Fragment() {
     }
 
     private fun initUI(secondDish: SecondDish) {
-        binding.textViewNombre.text = secondDish.name
+        binding.tvRecipeName.text = secondDish.name
         Glide.with(requireContext())
             .load(secondDish.image)
-            .into(binding.imageViewReceta)
-        binding.textViewIngredientes.text = secondDish.details.ingredients.toString()
-        binding.textViewCalorias.text = secondDish.details.apto
-        binding.textViewElaboracion.text = secondDish.details.elaboration
+            .into(binding.ivRecipe)
+        Glide.with(requireContext())
+            .load(secondDish.details.allergies)
+            .into(binding.ivSecondAllergies)
+        binding.tvIngredients.text = secondDish.details.ingredients.toString()
+        binding.tvElaboration.text = secondDish.details.elaboration
 
         // Obtén la ID del video de YouTube y guárdala en videoId
         videoId = secondDish.details.urlVideo ?: ""

@@ -11,7 +11,7 @@
         android:background="#D5F8E3BA"
     tools:context=".presentation.fragment.SecondDishDetailFragment">
         <TextView
-            android:id="@+id/textViewNombre"
+            android:id="@+id/tv_recipe_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="33dp"
@@ -21,26 +21,26 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="#000000"
-            app:layout_constraintBottom_toTopOf="@+id/imageViewReceta"
+            app:layout_constraintBottom_toTopOf="@+id/iv_recipe"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageViewReceta"
+            android:id="@+id/iv_recipe"
             android:layout_width="250dp"
             android:layout_height="200dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/textViewIngredientes"
+            app:layout_constraintBottom_toTopOf="@+id/tv_ingredients"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewNombre"
+            app:layout_constraintTop_toBottomOf="@+id/tv_recipe_name"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/textViewIngredientes"
+            android:id="@+id/tv_ingredients"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -51,13 +51,13 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="#000000"
-            app:layout_constraintBottom_toTopOf="@+id/textViewElaboracion"
+            app:layout_constraintBottom_toTopOf="@+id/tv_elaboration"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewReceta" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_recipe" />
 
         <TextView
-            android:id="@+id/textViewElaboracion"
+            android:id="@+id/tv_elaboration"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -67,26 +67,22 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="#000000"
-            app:layout_constraintBottom_toTopOf="@+id/textViewCalorias"
+            app:layout_constraintBottom_toTopOf="@+id/iv_second_allergies"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewIngredientes" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_ingredients" />
 
-        <TextView
-            android:id="@+id/textViewCalorias"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/iv_second_allergies"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:text="TextView"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#000000"
             app:layout_constraintBottom_toTopOf="@+id/youtube_player_view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewElaboracion" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_elaboration" />
 
         <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
             android:id="@+id/youtube_player_view"
@@ -98,7 +94,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewCalorias" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_second_allergies" />
         <ProgressBar
             android:id="@+id/pb_second_dish_detail"
             android:layout_width="wrap_content"

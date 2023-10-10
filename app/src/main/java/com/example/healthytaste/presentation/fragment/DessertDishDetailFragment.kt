@@ -68,13 +68,15 @@ class DessertDishDetailFragment : Fragment() {
     }
 
     private fun initUI(dessertDish: DessertDish) {
-        binding.textViewNombre.text = dessertDish.name
+        binding.tvRecipeName.text = dessertDish.name
         Glide.with(requireContext())
             .load(dessertDish.image)
-            .into(binding.imageViewReceta)
-        binding.textViewIngredientes.text = dessertDish.details.ingredients.toString()
-        binding.textViewCalorias.text = dessertDish.details.apto
-        binding.textViewElaboracion.text = dessertDish.details.elaboration
+            .into(binding.ivRecipe)
+        binding.tvIngredients.text = dessertDish.details.ingredients.toString()
+        Glide.with(requireContext())
+            .load(dessertDish.details.allergies)
+            .into(binding.ivAllergies)
+        binding.tvElaboration.text = dessertDish.details.elaboration
 
         // Obtén la ID del video de YouTube y guárdala en videoId
         videoId = dessertDish.details.urlVideo ?: ""
