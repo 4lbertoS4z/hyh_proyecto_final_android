@@ -1,4 +1,4 @@
-package com.example.healthytaste.data.fistsdish.local
+package com.example.healthytaste.data.dish.local
 
 
 import com.example.healthytaste.data.local.MemoryCache

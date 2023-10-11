@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardView"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+
         android:background="@color/button_background_gradient"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +39,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/iv_first_dish_plate"
             app:layout_constraintStart_toEndOf="@+id/iv_first_dish_plate"
             app:layout_constraintTop_toTopOf="@+id/iv_first_dish_plate"
-            tools:text="Dish titleasdfdsdcxsdffffffffffjhggggggggggjhgggggggggggggjhgggggggghjjjjjjjjjjjjffffffff" />
+            tools:text="Dish title" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

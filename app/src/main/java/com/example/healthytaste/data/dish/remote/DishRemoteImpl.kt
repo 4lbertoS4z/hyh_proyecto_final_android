@@ -1,4 +1,4 @@
-package com.example.healthytaste.data.fistsdish.remote
+package com.example.healthytaste.data.dish.remote
 
 import com.example.healthytaste.data.remote.HealthyTasteService
 import com.example.healthytaste.model.DessertDish

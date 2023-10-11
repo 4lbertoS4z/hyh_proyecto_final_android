@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:padding="8dp"
     tools:context=".presentation.fragment.SecondDishFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_second_dish"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:itemCount="4"
+        tools:itemCount="8"
         tools:listitem="@layout/second_dish_list" />
     <ProgressBar
         android:id="@+id/pb_second_dish_loading"

@@ -6,4 +6,8 @@
     <string name="action_retry">Reintentar</string>
     <string name="error">Error</string>
     <string name="image_recipe">Imagen Receta</string>
+    <string name="recipe_name">Nombre Receta</string>
+    <string name="ingredients">Ingredientes:</string>
+    <string name="elaboration">Elaboración:</string>
+    <string name="allergies">Alergias:</string>
 </resources>

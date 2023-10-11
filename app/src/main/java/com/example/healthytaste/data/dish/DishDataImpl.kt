@@ -1,7 +1,7 @@
-package com.example.healthytaste.data.fistsdish
+package com.example.healthytaste.data.dish
 
-import com.example.healthytaste.data.fistsdish.local.DishLocalImpl
-import com.example.healthytaste.data.fistsdish.remote.DishRemoteImpl
+import com.example.healthytaste.data.dish.local.DishLocalImpl
+import com.example.healthytaste.data.dish.remote.DishRemoteImpl
 import com.example.healthytaste.domain.DishRepository
 import com.example.healthytaste.model.DessertDish
 import com.example.healthytaste.model.First

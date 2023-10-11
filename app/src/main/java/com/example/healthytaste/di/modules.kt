@@ -1,8 +1,8 @@
 package com.example.healthytaste.di
 
-import com.example.healthytaste.data.fistsdish.DishDataImpl
-import com.example.healthytaste.data.fistsdish.local.DishLocalImpl
-import com.example.healthytaste.data.fistsdish.remote.DishRemoteImpl
+import com.example.healthytaste.data.dish.DishDataImpl
+import com.example.healthytaste.data.dish.local.DishLocalImpl
+import com.example.healthytaste.data.dish.remote.DishRemoteImpl
 import com.example.healthytaste.data.local.MemoryCache
 import com.example.healthytaste.data.remote.ApiClient
 import com.example.healthytaste.data.remote.HealthyTasteService

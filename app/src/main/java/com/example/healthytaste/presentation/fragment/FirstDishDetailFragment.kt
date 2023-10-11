@@ -73,7 +73,7 @@ class FirstDishDetailFragment : Fragment() {
             .into(binding.ivRecipe)
         Glide.with(requireContext())
             .load(firstDish.details.allergies)
-            .into(binding.ivFirstAllergies)
+            .into(binding.ivAllergies)
         binding.tvIngredients.text = firstDish.details.ingredients.toString()
         binding.tvElaboration.text = firstDish.details.elaboration
 
