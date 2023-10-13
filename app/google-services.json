@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1064040396756",
+    "firebase_url": "https://healthytaste-bb33f-default-rtdb.firebaseio.com",
+    "project_id": "healthytaste-bb33f",
+    "storage_bucket": "healthytaste-bb33f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064040396756:android:1d7d8f47f37d99a73dc841",
+        "android_client_info": {
+          "package_name": "com.example.healthytaste"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqXlmLFKuF4r3n5m_71eJiyoFwhdisY6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
