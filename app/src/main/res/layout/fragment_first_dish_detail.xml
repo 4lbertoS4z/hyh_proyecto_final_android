@@ -4,111 +4,112 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#D5F8E3BA"
+    android:background="@color/detail_dish_color"
     android:fillViewport="true"
-    android:padding="8dp">
+    android:padding="@dimen/main_padding">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context=".presentation.fragment.FirstDishDetailFragment">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_recipe_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="33dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="@dimen/text_margin_top"
+            android:layout_marginBottom="@dimen/text_margin_bottom"
             android:text="@string/recipe_name"
             android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/tittle_recipe"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/iv_recipe"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_recipe"
-            android:layout_width="250dp"
-            android:layout_height="200dp"
-            android:layout_marginBottom="8dp"
+            android:layout_width="@dimen/image_large_width_detail"
+            android:layout_height="@dimen/image_large_height_detail"
+            android:layout_marginBottom="@dimen/text_margin_bottom"
             app:layout_constraintBottom_toTopOf="@+id/tv_ingredients_tittle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_recipe_name"
             tools:srcCompat="@tools:sample/avatars" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_ingredients_tittle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="@dimen/text_margin_bottom"
             android:text="@string/ingredients"
-            android:textColor="#000000"
-            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_dish_detail"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/tv_ingredients"
             app:layout_constraintStart_toStartOf="@+id/tv_ingredients"
             app:layout_constraintTop_toBottomOf="@+id/iv_recipe" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_ingredients"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="@dimen/text_margin_bottom"
             android:textAlignment="gravity"
-            android:textColor="#000000"
-            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/regular_text"
             app:layout_constraintBottom_toTopOf="@+id/tv_elaboration_tittle"
             app:layout_constraintStart_toStartOf="@+id/tv_ingredients_tittle"
             app:layout_constraintTop_toBottomOf="@+id/tv_ingredients_tittle"
             tools:text="ingredients list" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_elaboration_tittle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="@dimen/text_margin_bottom"
             android:text="@string/elaboration"
-            android:textColor="#000000"
-            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_dish_detail"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/tv_elaboration"
             app:layout_constraintStart_toStartOf="@+id/tv_ingredients"
             app:layout_constraintTop_toBottomOf="@+id/tv_ingredients" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_elaboration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:textColor="#000000"
-            android:textSize="16sp"
+            android:layout_marginBottom="@dimen/text_margin_bottom"
+            android:textColor="@color/black"
+            android:textSize="@dimen/regular_text"
             android:textAlignment="textStart"
             app:layout_constraintBottom_toTopOf="@+id/tv_allergies_tittle"
             app:layout_constraintStart_toStartOf="@+id/tv_elaboration_tittle"
             app:layout_constraintTop_toBottomOf="@+id/tv_elaboration_tittle"
             tools:text="recipe Explain" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_allergies_tittle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/allergies"
-            android:textColor="#000000"
-            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_dish_detail"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/iv_allergies"
             app:layout_constraintStart_toStartOf="@+id/tv_elaboration"
             app:layout_constraintTop_toBottomOf="@+id/tv_elaboration" />
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_allergies"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="@dimen/image_medium_width"
+            android:layout_height="@dimen/image_medium_height"
+            android:layout_marginStart="@dimen/margin_start"
+            android:layout_marginBottom="@dimen/text_margin_bottom"
             app:layout_constraintBottom_toTopOf="@+id/youtube_player_view"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_allergies_tittle" />

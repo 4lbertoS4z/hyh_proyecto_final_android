@@ -19,33 +19,7 @@
     <color name="red_poppy">#D8133B</color>
     <color name="wine_light">#F165AC</color>
     <color name="wine">#763456</color>
+    <color name="detail_dish_color">#D5F8E3BA</color>#31F6C306
+    <color name="dish_list_color">#31F6C306</color>
 
-
-    <!--Button-->
-    <color name="button_background_gradient">@color/wine_light</color>
-    <color name="button_background">@color/wine</color>
-    <color name="button_text">@color/white</color>
-
-    <!--LessonApp-->
-    <color name="lesson_card_background">@color/blue</color>
-    <color name="lesson_card_background_disabled">@color/grey</color>
-    <color name="lesson_background">@color/navy_blue</color>
-    <color name="lesson_subtitle_text">@color/yellow_buttercup</color>
-    <color name="lesson_title_text">@color/yellow_buttercup</color>
-    <color name="lesson_add_button_background">@color/red</color>
-
-    <color name="language_android_category">@color/green_lime</color>
-    <color name="language_ios_category">@color/blue_cool</color>
-    <color name="language_flutter_category">@color/yellow_buttercup</color>
-
-    <color name="android_color">@color/green_lime</color>
-    <color name="ios_color">@color/pink</color>
-    <color name="flutter_color">@color/blue_cool</color>
-
-    <!--Pokemon-->
-    <color name="tab_background">@color/red_poppy</color>
-    <color name="bulbasaur_color">@color/green_goblin</color>
-    <color name="squirtle_color">@color/blue_cool</color>
-    <color name="charmander_color">@color/orange_pumpkin</color>
-    <color name="pikachu_color">@color/yellow_buttercup</color>
 </resources>

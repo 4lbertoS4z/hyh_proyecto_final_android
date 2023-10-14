@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
-    android:background="@color/green_lime"
+    android:padding="@dimen/main_padding"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.fragment.FirstDishFragment">
 

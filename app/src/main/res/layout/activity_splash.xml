@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
+    android:padding="@dimen/main_padding"
     tools:context=".presentation.SplashActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="@dimen/image_icon_width"
+        android:layout_height="@dimen/image_icon_height"
         android:background="@drawable/chef_icon"
         android:scaleType="center"
         app:layout_constraintBottom_toTopOf="@+id/appCompatTextView3"
@@ -21,27 +21,24 @@
         android:id="@+id/appCompatTextView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="@dimen/text_margin_top_splash_tittle"
         android:text="@string/splash_activity_text_loading"
         android:textAlignment="center"
         android:textColor="@color/green_lime"
-        android:textSize="20sp"
+        android:textSize="@dimen/tittle_recipe"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/lav_splash"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.648" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lav_splash"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="@dimen/animation_width"
+        android:layout_height="@dimen/animation_height"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="128dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"

@@ -23,14 +23,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-        
+
         notificationAlert()
 
         navigationController()
 
     }
 
-    private fun notificationAlert(){
+    private fun notificationAlert() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             requestPermissions(arrayOf(Manifest.permission.POST_NOTIFICATIONS), 1)
         }
@@ -52,4 +52,8 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.frag_cont_view_activity_main)
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
 }

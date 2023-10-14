@@ -18,17 +18,19 @@
         android:id="@+id/firstDishDetailFragment"
         android:name="com.example.healthytaste.presentation.fragment.FirstDishDetailFragment"
         tools:layout="@layout/fragment_first_dish_detail">
-
         <argument
             android:name="firstDishId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_firstDishDetailFragment_to_navigation_first_dish"
+            app:destination="@id/navigation_first_dish" />
 
     </fragment>
     <fragment
         android:id="@+id/navigation_second_dish"
         android:name="com.example.healthytaste.presentation.fragment.SecondDishFragment"
         android:label="Segundos"
-        tools:layout="@layout/fragment_second_dish" >
+        tools:layout="@layout/fragment_second_dish">
         <action
             android:id="@+id/action_navigation_second_dish_to_navigation_second_dish_detail_fragment"
             app:destination="@id/navigation_second_dish_detail_fragment" />
@@ -37,15 +39,19 @@
         android:id="@+id/navigation_second_dish_detail_fragment"
         android:name="com.example.healthytaste.presentation.fragment.SecondDishDetailFragment"
         tools:layout="@layout/fragment_second_dish_detail">
+
         <argument
             android:name="secondDishId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_secondDishDetailFragment_to_navigation_second_dish"
+            app:destination="@id/navigation_second_dish" />
     </fragment>
     <fragment
         android:id="@+id/navigation_dessert"
         android:name="com.example.healthytaste.presentation.fragment.DessertDishFragment"
         android:label="Postres"
-        tools:layout="@layout/fragment_dessert" >
+        tools:layout="@layout/fragment_dessert">
         <action
             android:id="@+id/action_navigation_dessert_to_navigation_dessert_dish_detail_fragment"
             app:destination="@id/navigation_dessert_dish_detail_fragment" />
@@ -54,9 +60,13 @@
         android:id="@+id/navigation_dessert_dish_detail_fragment"
         android:name="com.example.healthytaste.presentation.fragment.DessertDishDetailFragment"
         tools:layout="@layout/fragment_dessert_dish_detail">
+
         <argument
             android:name="dessertDishId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_dessertDishDetailFragment_to_navigation_dessert"
+            app:destination="@id/navigation_dessert" />
     </fragment>
     <fragment
         android:id="@+id/navigation_kcal_calculator"

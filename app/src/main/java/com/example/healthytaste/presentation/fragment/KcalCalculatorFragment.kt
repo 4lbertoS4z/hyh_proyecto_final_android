@@ -1,5 +1,6 @@
 package com.example.healthytaste.presentation.fragment
 
+import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -20,10 +21,11 @@ class KcalCalculatorFragment : Fragment() {
         get() = _binding ?: throw IllegalStateException("FragmentKcalBinding is not available.")
 
 
+    @SuppressLint("SetJavaScriptEnabled")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
 
         _binding = FragmentKcalCalculatorBinding.inflate(inflater, container, false)
