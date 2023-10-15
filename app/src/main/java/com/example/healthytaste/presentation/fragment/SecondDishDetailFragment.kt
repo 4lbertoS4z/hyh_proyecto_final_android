@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TableRow
+import android.widget.TextView
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.healthytaste.R
@@ -73,11 +75,10 @@ class SecondDishDetailFragment : Fragment() {
         Glide.with(requireContext())
             .load(secondDish.details.allergies)
             .into(binding.ivAllergies)
-        binding.tvIngredients.text = secondDish.details.ingredients.toString()
         binding.tvElaboration.text = secondDish.details.elaboration
 
         // Obtén la ID del video de YouTube y guárdala en videoId
-        videoId = secondDish.details.urlVideo ?: ""
+        videoId = secondDish.details.urlVideo
 
         // Configura el reproductor de YouTube
         val youTubePlayerView = binding.youtubePlayerView
@@ -89,6 +90,22 @@ class SecondDishDetailFragment : Fragment() {
                 playYouTubeVideo(youTubePlayer)
             }
         })
+
+        // Devuelve la lista de ingredientes(cada uno en una linea)
+        val ingredientsArray = secondDish.details.ingredients
+        val tableLayout = binding.tlIngredients
+        val textSizeInSp = 16
+
+        for (ingredient in ingredientsArray) {
+            val tableRow = TableRow(requireContext())
+            val textView = TextView(requireContext())
+
+            textView.textSize = textSizeInSp.toFloat()
+            textView.text = ingredient
+            tableRow.addView(textView)
+            tableLayout.addView(tableRow)
+        }
+
     }
 
     private fun playYouTubeVideo(youTubePlayer: YouTubePlayer) {

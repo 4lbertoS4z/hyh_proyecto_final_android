@@ -49,22 +49,18 @@
             android:textColor="@color/black"
             android:textSize="@dimen/title_dish_detail"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/tv_ingredients"
-            app:layout_constraintStart_toStartOf="@+id/tv_ingredients"
+            app:layout_constraintBottom_toTopOf="@+id/tl_ingredients"
+            app:layout_constraintStart_toStartOf="@+id/tl_ingredients"
             app:layout_constraintTop_toBottomOf="@+id/iv_recipe" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_ingredients"
+        <TableLayout
+            android:id="@+id/tl_ingredients"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/text_margin_bottom"
-            android:textAlignment="gravity"
-            android:textColor="@color/black"
-            android:textSize="@dimen/regular_text"
             app:layout_constraintBottom_toTopOf="@+id/tv_elaboration_tittle"
             app:layout_constraintStart_toStartOf="@+id/tv_ingredients_tittle"
-            app:layout_constraintTop_toBottomOf="@+id/tv_ingredients_tittle"
-            tools:text="ingredients list" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_ingredients_tittle"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_elaboration_tittle"
@@ -76,8 +72,8 @@
             android:textSize="@dimen/title_dish_detail"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/tv_elaboration"
-            app:layout_constraintStart_toStartOf="@+id/tv_ingredients"
-            app:layout_constraintTop_toBottomOf="@+id/tv_ingredients" />
+            app:layout_constraintStart_toStartOf="@+id/tl_ingredients"
+            app:layout_constraintTop_toBottomOf="@+id/tl_ingredients" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_elaboration"

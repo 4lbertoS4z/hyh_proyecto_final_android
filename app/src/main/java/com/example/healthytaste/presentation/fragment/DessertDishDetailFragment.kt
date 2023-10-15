@@ -5,16 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TableRow
+import android.widget.TextView
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.healthytaste.R
 import com.example.healthytaste.databinding.FragmentDessertDishDetailBinding
 import com.example.healthytaste.model.DessertDish
-import com.example.healthytaste.model.First
 import com.example.healthytaste.model.ResourceState
 import com.example.healthytaste.presentation.viewModel.DessertDishDetailState
 import com.example.healthytaste.presentation.viewModel.DessertDishViewModel
-import com.example.healthytaste.presentation.viewModel.FirstDishViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
@@ -33,8 +33,7 @@ class DessertDishDetailFragment : Fragment() {
             override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -72,25 +71,37 @@ class DessertDishDetailFragment : Fragment() {
         Glide.with(requireContext())
             .load(dessertDish.image)
             .into(binding.ivRecipe)
-        binding.tvIngredients.text = dessertDish.details.ingredients.toString()
         Glide.with(requireContext())
             .load(dessertDish.details.allergies)
             .into(binding.ivAllergies)
         binding.tvElaboration.text = dessertDish.details.elaboration
 
         // Obtén la ID del video de YouTube y guárdala en videoId
-        videoId = dessertDish.details.urlVideo ?: ""
+        videoId = dessertDish.details.urlVideo
 
         // Configura el reproductor de YouTube
         val youTubePlayerView = binding.youtubePlayerView
         lifecycle.addObserver(youTubePlayerView)
-
         youTubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
                 isPlayerReady = true
                 playYouTubeVideo(youTubePlayer)
             }
         })
+        // Devuelve la lista de ingredientes(cada uno en una linea)
+        val ingredientsArray = dessertDish.details.ingredients
+        val tableLayout = binding.tlIngredients
+        val textSizeInSp = 16
+
+        for (ingredient in ingredientsArray) {
+            val tableRow = TableRow(requireContext())
+            val textView = TextView(requireContext())
+
+            textView.textSize = textSizeInSp.toFloat()
+            textView.text = ingredient
+            tableRow.addView(textView)
+            tableLayout.addView(tableRow)
+        }
     }
 
     private fun playYouTubeVideo(youTubePlayer: YouTubePlayer) {
