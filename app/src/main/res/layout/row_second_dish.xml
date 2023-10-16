@@ -5,8 +5,8 @@
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/margin_bottom"
-    app:cardCornerRadius="@dimen/corner_radius_dish_list">
+    android:layout_marginBottom="@dimen/margin_medium"
+    app:cardCornerRadius="@dimen/corner_radius_medium">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,11 +16,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_first_dish_plate"
-            android:layout_width="@dimen/image_dish_list_width"
-            android:layout_height="@dimen/image_dish_list_height"
+            android:id="@+id/iv_second_dish_plate"
+            android:layout_width="@dimen/image_dish_list_size"
+            android:layout_height="@dimen/image_dish_list_size"
             android:layout_gravity="center_vertical"
             android:contentDescription="@string/image_recipe"
             android:scaleType="centerCrop"
@@ -30,15 +29,16 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_first_dish_name"
+            android:id="@+id/tv_second_dish_name"
             android:layout_width="@dimen/text_layout_width"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_start"
-            android:textSize="@dimen/title_text"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:textSize="@dimen/text_medium"
+            android:textColor="@color/colorTextPrimary"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_first_dish_plate"
-            app:layout_constraintStart_toEndOf="@+id/iv_first_dish_plate"
-            app:layout_constraintTop_toTopOf="@+id/iv_first_dish_plate"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_second_dish_plate"
+            app:layout_constraintStart_toEndOf="@+id/iv_second_dish_plate"
+            app:layout_constraintTop_toTopOf="@+id/iv_second_dish_plate"
             tools:text="Dish title" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

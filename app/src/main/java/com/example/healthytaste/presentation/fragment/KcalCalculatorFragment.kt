@@ -11,7 +11,7 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
-import com.example.healthytaste.KCAL_CALCULATOR
+import com.example.healthytaste.data.common.KCAL_CALCULATOR
 import com.example.healthytaste.databinding.FragmentKcalCalculatorBinding
 
 

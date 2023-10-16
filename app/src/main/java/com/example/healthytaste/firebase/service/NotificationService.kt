@@ -1,4 +1,4 @@
-package com.example.healthytaste.service
+package com.example.healthytaste.firebase.service
 
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage

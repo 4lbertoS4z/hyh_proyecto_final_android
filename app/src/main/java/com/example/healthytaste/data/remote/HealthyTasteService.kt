@@ -1,11 +1,11 @@
 package com.example.healthytaste.data.remote
 
-import com.example.healthytaste.DESSERT_DISH
-import com.example.healthytaste.DESSERT_DISH_DETAIL
-import com.example.healthytaste.FIRST_DISH
-import com.example.healthytaste.FIRST_DISH_DETAIL
-import com.example.healthytaste.SECOND_DISH
-import com.example.healthytaste.SECOND_DISH_DETAIL
+import com.example.healthytaste.data.common.DESSERT_DISH
+import com.example.healthytaste.data.common.DESSERT_DISH_DETAIL
+import com.example.healthytaste.data.common.FIRST_DISH
+import com.example.healthytaste.data.common.FIRST_DISH_DETAIL
+import com.example.healthytaste.data.common.SECOND_DISH
+import com.example.healthytaste.data.common.SECOND_DISH_DETAIL
 import com.example.healthytaste.model.DessertDish
 import com.example.healthytaste.model.DessertDishResponse
 import com.example.healthytaste.model.First

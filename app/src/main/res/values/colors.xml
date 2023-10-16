@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--region main colors-->
+    <color name="colorPrimary">@color/black</color>
+    <color name="colorSecondary">@color/black</color>
+    <color name="colorTertiary">@color/black</color>
+    <color name="colorAccent">@color/white</color>
+
+
+    <color name="colorTextPrimary">@color/black</color>
+    <color name="colorTextSecondary">#FFFFFFFF</color>
+    <color name="colorTextAccent">#FFFFFFFF</color>
+
+
+    <color name="colorSuccess">@color/green_goblin</color>
+    <color name="colorError">@color/red</color>
+    <color name="colorAlert">@color/orange_pumpkin</color>
+    <!--endregion main colors -->
+
+    <!--region hexadecimal-->
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#959595</color>
     <color name="black">#FF000000</color>
@@ -19,7 +38,8 @@
     <color name="red_poppy">#D8133B</color>
     <color name="wine_light">#F165AC</color>
     <color name="wine">#763456</color>
-    <color name="detail_dish_color">#D5F8E3BA</color>#31F6C306
+    <color name="detail_dish_color">#D5F8E3BA</color>
     <color name="dish_list_color">#31F6C306</color>
+    <!--endregion hexadecimal -->
 
 </resources>

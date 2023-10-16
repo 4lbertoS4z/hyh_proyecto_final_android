@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.healthytaste.databinding.SecondDishListBinding
+import com.example.healthytaste.databinding.RowSecondDishBinding
 import com.example.healthytaste.model.SecondDish
 
 class SecondDishLlistAdapter : RecyclerView.Adapter<SecondDishLlistAdapter.SecondDishViewHolder>() {
@@ -13,7 +13,7 @@ class SecondDishLlistAdapter : RecyclerView.Adapter<SecondDishLlistAdapter.Secon
     var onClickListener: (SecondDish) -> Unit = {}
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SecondDishViewHolder {
         val binding =
-            SecondDishListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            RowSecondDishBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return SecondDishViewHolder(binding)
     }
 
@@ -39,7 +39,7 @@ class SecondDishLlistAdapter : RecyclerView.Adapter<SecondDishLlistAdapter.Secon
         notifyDataSetChanged()
     }
 
-    inner class SecondDishViewHolder(binding: SecondDishListBinding) :
+    inner class SecondDishViewHolder(binding: RowSecondDishBinding) :
         RecyclerView.ViewHolder(binding.root) {
         val rootView = binding.root
         val nameTextView = binding.tvSecondDishName

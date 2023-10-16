@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.healthytaste.databinding.DessertDishListBinding
+import com.example.healthytaste.databinding.RowDessertDishBinding
 import com.example.healthytaste.model.DessertDish
 
 class DessertDishListAdapter : RecyclerView.Adapter<DessertDishListAdapter.DessertDishViewHolder>() {
@@ -13,7 +13,7 @@ class DessertDishListAdapter : RecyclerView.Adapter<DessertDishListAdapter.Desse
     var onClickListener: (DessertDish) -> Unit = {}
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DessertDishViewHolder {
         val binding =
-            DessertDishListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            RowDessertDishBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return DessertDishViewHolder(binding)
     }
 
@@ -39,7 +39,7 @@ class DessertDishListAdapter : RecyclerView.Adapter<DessertDishListAdapter.Desse
         notifyDataSetChanged()
     }
 
-    inner class DessertDishViewHolder(binding: DessertDishListBinding) :
+    inner class DessertDishViewHolder(binding: RowDessertDishBinding) :
         RecyclerView.ViewHolder(binding.root) {
         val rootView = binding.root
         val nameTextView = binding.tvDessertDishName

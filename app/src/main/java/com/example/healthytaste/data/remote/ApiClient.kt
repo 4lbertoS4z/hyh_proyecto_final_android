@@ -1,6 +1,6 @@
 package com.example.healthytaste.data.remote
 
-import com.example.healthytaste.BASE_URL
+import com.example.healthytaste.data.common.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

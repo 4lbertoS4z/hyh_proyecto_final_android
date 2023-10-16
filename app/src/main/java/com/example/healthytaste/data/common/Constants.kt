@@ -1,4 +1,4 @@
-package com.example.healthytaste
+package com.example.healthytaste.data.common
 
 
 const val BASE_URL = "https://healthytaste-bb33f-default-rtdb.firebaseio.com/"

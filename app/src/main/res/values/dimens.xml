@@ -1,40 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Margin -->
-    <dimen name="main_margin">16dp</dimen>
-    <dimen name="main_margin_start_zero">0dp</dimen>
-    <dimen name="main_margin_end_zero">0dp</dimen>
-    <dimen name="margin_start">8dp</dimen>
-    <dimen name="margin_bottom">8dp</dimen>
-    <dimen name="text_margin_top">20dp</dimen>
-    <dimen name="text_margin_top_splash_tittle">100dp</dimen>
-    <dimen name="text_margin_bottom">8dp</dimen>
-    <dimen name="corner_radius_dish_list">20dp</dimen>
 
-    <!-- Padding -->
-    <dimen name="main_padding">8dp</dimen>
+    <!-- region margin -->
+    <dimen name="margin_zero">0dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="margin_huge">16dp</dimen>
+    <dimen name="margin_large">20dp</dimen>
+    <dimen name="margin_custom_100">100dp</dimen>
+    <!-- endregion margin -->
 
+    <!-- region text -->
+    <dimen name="text_small">8sp</dimen>
+    <dimen name="text_medium">16sp</dimen>
+    <dimen name="text_large">18sp</dimen>
+    <dimen name="text_huge">20sp</dimen>
+    <dimen name="text_headline">28sp</dimen>
+    <!-- endregion text -->
 
-    <!-- Text -->
-    <dimen name="tittle_recipe">20sp</dimen>
-    <dimen name="title_text">16sp</dimen>
-    <dimen name="title_dish_detail">18sp</dimen>
-    <dimen name="regular_text">16sp</dimen>
+    <!-- region image -->
+    <dimen name="image_dish_list_size">120dp</dimen>
+    <dimen name="image_large_size">250dp</dimen>
+    <dimen name="image_medium_size">200dp</dimen>
+    <dimen name="image_icon_size">100dp</dimen>
+    <dimen name="animation_size">300dp</dimen>
+    <!-- endregion image -->
 
-    <!-- Image -->
-    <dimen name="image_dish_list_width">120dp</dimen>
-    <dimen name="image_dish_list_height">120dp</dimen>
-    <dimen name="image_large_width_detail">250dp</dimen>
-    <dimen name="image_large_height_detail">200dp</dimen>
-    <dimen name="image_medium_width">200dp</dimen>
-    <dimen name="image_medium_height">100dp</dimen>
-    <dimen name="image_icon_width">100dp</dimen>
-    <dimen name="image_icon_height">100dp</dimen>
-    <dimen name="animation_width">300dp</dimen>
-    <dimen name="animation_height">300dp</dimen>
-
-    <!-- WidthText -->
+    <!-- region widthText -->
     <dimen name="text_layout_width">200dp</dimen>
+    <!-- endregion widthText -->
+
+    <!-- region corner -->
+    <dimen name="corner_radius_medium">8dp</dimen>
+    <!-- endregion corner -->
+
+    <!-- region padding -->
+    <dimen name="main_padding">8dp</dimen>
+    <dimen name="vertical_padding_small">4dp</dimen>
+    <dimen name="vertical_padding_medium">12dp</dimen>
+    <dimen name="vertical_padding_large">16dp</dimen>
+    <dimen name="vertical_padding_huge">20dp</dimen>
+    <!-- endregion padding -->
 
 </resources>
