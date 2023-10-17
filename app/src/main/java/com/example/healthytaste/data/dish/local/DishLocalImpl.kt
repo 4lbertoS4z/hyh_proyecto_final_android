@@ -9,9 +9,10 @@ import com.example.healthytaste.model.SecondDish
 class DishLocalImpl(
     private val memoryCache: MemoryCache
 ) {
-    fun getFirstDish(): List<First>{
+    fun getFirstDish(): List<First> {
         return memoryCache.firstDishList.orEmpty()
     }
+
     fun getSecondDish(): List<SecondDish> {
         return memoryCache.secondDishList.orEmpty()
     }
@@ -19,9 +20,11 @@ class DishLocalImpl(
     fun getDessertDish(): List<DessertDish> {
         return memoryCache.dessertDishList.orEmpty()
     }
-    fun saveFirstDish(firstDish: List<First>){
+
+    fun saveFirstDish(firstDish: List<First>) {
         memoryCache.firstDishList = firstDish
     }
+
     fun saveSecondDish(secondDish: List<SecondDish>) {
         memoryCache.secondDishList = secondDish
     }

@@ -27,6 +27,7 @@ class FirstDishViewModel(
     fun getFirstDishLiveData(): LiveData<FirstDishListState> {
         return firstDishMutableLiveData
     }
+
     fun getFirstOneDishLiveData(): LiveData<FirstDishDetailState> {
         return firstDishDetailMutableLiveData
     }

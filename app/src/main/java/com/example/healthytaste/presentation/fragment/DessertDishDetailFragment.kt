@@ -25,17 +25,18 @@ class DessertDishDetailFragment : Fragment() {
     private var videoId: String = ""
     private var isPlayerReady: Boolean = false
 
-    private val binding:FragmentDessertDishDetailBinding by lazy {
+    private val binding: FragmentDessertDishDetailBinding by lazy {
         FragmentDessertDishDetailBinding.inflate(layoutInflater)
     }
     private val args: DessertDishDetailFragmentArgs by navArgs()
     private val dessertDishViewModel: DessertDishViewModel by activityViewModel()
-            override fun onCreateView(
+    override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViewModel()
@@ -76,10 +77,10 @@ class DessertDishDetailFragment : Fragment() {
             .into(binding.ivAllergies)
         binding.tvElaboration.text = dessertDish.details.elaboration
 
-        // Obtén la ID del video de YouTube y guárdala en videoId
+
         videoId = dessertDish.details.urlVideo
 
-        // Configura el reproductor de YouTube
+
         val youTubePlayerView = binding.youtubePlayerView
         lifecycle.addObserver(youTubePlayerView)
         youTubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {

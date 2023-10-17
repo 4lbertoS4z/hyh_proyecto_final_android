@@ -6,8 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.healthytaste.domain.usecase.dessertdishusecase.GetDessertDishDetailUseCase
 import com.example.healthytaste.domain.usecase.dessertdishusecase.GetDessertDishUseCase
-import com.example.healthytaste.domain.usecase.firstdishusecase.GetFirstDishDetailUseCase
-import com.example.healthytaste.domain.usecase.firstdishusecase.GetFirstDishUseCase
 import com.example.healthytaste.model.DessertDish
 import com.example.healthytaste.model.ResourceState
 import kotlinx.coroutines.Dispatchers
@@ -29,6 +27,7 @@ class DessertDishViewModel(
     fun getDessertDishLiveData(): LiveData<DessertDishListState> {
         return dessertDishMutableLiveData
     }
+
     fun getDessertDishDetailLiveData(): LiveData<DessertDishDetailState> {
         return dessertDishDetailMutableLiveData
     }

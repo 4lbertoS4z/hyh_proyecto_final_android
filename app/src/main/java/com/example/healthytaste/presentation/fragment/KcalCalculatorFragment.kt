@@ -32,7 +32,7 @@ class KcalCalculatorFragment : Fragment() {
         val root: View = binding.root
 
         swipeRefresh()
-        //webView
+
 
         binding.webView.webChromeClient = object : WebChromeClient() {
 
@@ -74,10 +74,10 @@ class KcalCalculatorFragment : Fragment() {
         }
     }
 
-    private fun swipeRefresh(){
-    binding.swipeRefresh.setOnRefreshListener {
-        binding.webView.reload()
+    private fun swipeRefresh() {
+        binding.swipeRefresh.setOnRefreshListener {
+            binding.webView.reload()
+        }
     }
-}
 
 }

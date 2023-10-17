@@ -9,19 +9,24 @@ class DishRemoteImpl(private val healthyTasteService: HealthyTasteService) {
     suspend fun getFirstDish(): List<First> {
         return healthyTasteService.getFirstDish()
     }
-    suspend fun getOneFirstDish(firstDishId: Int): First{
+
+    suspend fun getOneFirstDish(firstDishId: Int): First {
         return healthyTasteService.getOneFirstDish(firstDishId)
     }
-    suspend fun getSecondDish(): List<SecondDish>{
+
+    suspend fun getSecondDish(): List<SecondDish> {
         return healthyTasteService.getSecondDish()
     }
-    suspend fun getSecondDishDetail(secondDishId: Int): SecondDish{
+
+    suspend fun getSecondDishDetail(secondDishId: Int): SecondDish {
         return healthyTasteService.getSecondDetail(secondDishId)
     }
-    suspend fun getDessertDish(): List<DessertDish>{
+
+    suspend fun getDessertDish(): List<DessertDish> {
         return healthyTasteService.getDessertDish()
     }
-    suspend fun getDessertDishDetail(dessertDishId: Int): DessertDish{
+
+    suspend fun getDessertDishDetail(dessertDishId: Int): DessertDish {
         return healthyTasteService.getDessertDishDetail(dessertDishId)
     }
 }

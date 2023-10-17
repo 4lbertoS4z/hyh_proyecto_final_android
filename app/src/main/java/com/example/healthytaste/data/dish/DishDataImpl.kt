@@ -8,16 +8,16 @@ import com.example.healthytaste.model.First
 import com.example.healthytaste.model.SecondDish
 
 class DishDataImpl(
-    private val dishLocalImpl:DishLocalImpl,
-    private val dishRemoteImpl:DishRemoteImpl
+    private val dishLocalImpl: DishLocalImpl,
+    private val dishRemoteImpl: DishRemoteImpl
 ) : DishRepository {
     override suspend fun getFirstDish(forceRemote: Boolean): List<First> {
 
         val chachedFirstDishList = dishLocalImpl.getFirstDish()
 
-        if (chachedFirstDishList.isNotEmpty() && !forceRemote){
+        if (chachedFirstDishList.isNotEmpty() && !forceRemote) {
             return chachedFirstDishList
-        }else{
+        } else {
             val remoteFirstDishList = dishRemoteImpl.getFirstDish()
             saveFirstDish(remoteFirstDishList)
             return remoteFirstDishList
@@ -31,9 +31,9 @@ class DishDataImpl(
     override suspend fun getSecondDish(forceRemote: Boolean): List<SecondDish> {
         val chachedSecondDishList = dishLocalImpl.getSecondDish()
 
-        if (chachedSecondDishList.isNotEmpty() && !forceRemote){
+        if (chachedSecondDishList.isNotEmpty() && !forceRemote) {
             return chachedSecondDishList
-        }else{
+        } else {
             val remoteSecondDishList = dishRemoteImpl.getSecondDish()
             saveSecondDish(remoteSecondDishList)
             return remoteSecondDishList
@@ -47,24 +47,26 @@ class DishDataImpl(
     override suspend fun getDessertDish(forceRemote: Boolean): List<DessertDish> {
         val chachedDessertDishList = dishLocalImpl.getDessertDish()
 
-        if (chachedDessertDishList.isNotEmpty() && !forceRemote){
+        if (chachedDessertDishList.isNotEmpty() && !forceRemote) {
             return chachedDessertDishList
-        }else{
+        } else {
             val remoteDessertDishList = dishRemoteImpl.getDessertDish()
             saveDessertDish(remoteDessertDishList)
             return remoteDessertDishList
         }
     }
+
     override suspend fun getDessertDetail(dessertDishId: Int): DessertDish {
         return dishRemoteImpl.getDessertDishDetail(dessertDishId)
 
     }
+
     override fun saveFirstDish(firstDish: List<First>) {
         dishLocalImpl.saveFirstDish(firstDish)
     }
 
     override fun saveSecondDish(secondDish: List<SecondDish>) {
-       dishLocalImpl.saveSecondDish(secondDish)
+        dishLocalImpl.saveSecondDish(secondDish)
     }
 
     override fun saveDessertDish(dessertDish: List<DessertDish>) {

@@ -27,7 +27,7 @@ val baseModule = module {
 val dishModule = module {
     factory { DishLocalImpl(get()) }
     factory { DishRemoteImpl(get()) }
-    factory<DishRepository> { DishDataImpl(get(),get()) }
+    factory<DishRepository> { DishDataImpl(get(), get()) }
     factory { GetFirstDishUseCase(get()) }
     factory { GetFirstDishDetailUseCase(get()) }
     factory { GetSecondDishUseCase(get()) }
@@ -35,9 +35,9 @@ val dishModule = module {
     factory { GetDessertDishUseCase(get()) }
     factory { GetDessertDishDetailUseCase(get()) }
 
-    viewModel { FirstDishViewModel(get(),get()) }
+    viewModel { FirstDishViewModel(get(), get()) }
 
-    viewModel { SecondDishViewModel(get(),get()) }
+    viewModel { SecondDishViewModel(get(), get()) }
 
-    viewModel { DessertDishViewModel(get(),get()) }
+    viewModel { DessertDishViewModel(get(), get()) }
 }

@@ -6,7 +6,7 @@ import com.example.healthytaste.model.SecondDish
 class GetSecondDishUseCase(
     private val dishRepository: DishRepository
 ) {
-    suspend fun execute(forceRemote: Boolean = false): List<SecondDish>{
+    suspend fun execute(forceRemote: Boolean = false): List<SecondDish> {
         return dishRepository.getSecondDish(forceRemote)
     }
 }

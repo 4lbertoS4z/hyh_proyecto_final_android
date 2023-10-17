@@ -8,7 +8,8 @@ import com.bumptech.glide.Glide
 import com.example.healthytaste.databinding.RowDessertDishBinding
 import com.example.healthytaste.model.DessertDish
 
-class DessertDishListAdapter : RecyclerView.Adapter<DessertDishListAdapter.DessertDishViewHolder>() {
+class DessertDishListAdapter :
+    RecyclerView.Adapter<DessertDishListAdapter.DessertDishViewHolder>() {
     private var dessertDishList: List<DessertDish> = emptyList()
     var onClickListener: (DessertDish) -> Unit = {}
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DessertDishViewHolder {

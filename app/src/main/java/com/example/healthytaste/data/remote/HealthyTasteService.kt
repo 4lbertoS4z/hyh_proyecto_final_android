@@ -17,20 +17,22 @@ import retrofit2.http.Path
 
 interface HealthyTasteService {
     @GET(FIRST_DISH)
-    suspend fun getFirstDish():FirstDishResponse
+    suspend fun getFirstDish(): FirstDishResponse
 
     @GET(FIRST_DISH_DETAIL)
-    suspend fun getOneFirstDish(@Path("firstDishId")firstDishId: Int): First
+    suspend fun getOneFirstDish(@Path("firstDishId") firstDishId: Int): First
 
     @GET(SECOND_DISH)
-    suspend fun getSecondDish():SecondDishResponse
+    suspend fun getSecondDish(): SecondDishResponse
 
     @GET(SECOND_DISH_DETAIL)
-    suspend fun getSecondDetail(@Path("secondDishId")secondDishId:Int): SecondDish
+    suspend fun getSecondDetail(@Path("secondDishId") secondDishId: Int): SecondDish
+
     @GET(DESSERT_DISH)
     suspend fun getDessertDish(): DessertDishResponse
+
     @GET(DESSERT_DISH_DETAIL)
-    suspend fun getDessertDishDetail(@Path("dessertDishId")dessertDishId: Int): DessertDish
+    suspend fun getDessertDishDetail(@Path("dessertDishId") dessertDishId: Int): DessertDish
 
 
 }

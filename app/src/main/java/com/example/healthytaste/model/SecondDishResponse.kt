@@ -3,7 +3,7 @@ package com.example.healthytaste.model
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
-class SecondDishResponse: ArrayList<SecondDish> ()
+class SecondDishResponse : ArrayList<SecondDish>()
 
 @Keep
 data class SecondDish(

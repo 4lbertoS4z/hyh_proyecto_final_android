@@ -49,7 +49,7 @@ class SecondDishFragment : Fragment() {
 
         secondDishListAdapter.onClickListener = { secondDish ->
             findNavController().navigate(
-               SecondDishFragmentDirections.actionNavigationSecondDishToNavigationSecondDishDetailFragment(
+                SecondDishFragmentDirections.actionNavigationSecondDishToNavigationSecondDishDetailFragment(
                     secondDish.id.toInt()
                 )
             )

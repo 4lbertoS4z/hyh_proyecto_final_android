@@ -8,24 +8,25 @@ import com.bumptech.glide.Glide
 import com.example.healthytaste.databinding.RowFirstDishBinding
 import com.example.healthytaste.model.First
 
-class FirstDishListAdapter:RecyclerView.Adapter<FirstDishListAdapter.FirstDishViewHolder>() {
+class FirstDishListAdapter : RecyclerView.Adapter<FirstDishListAdapter.FirstDishViewHolder>() {
 
     private var firstDishList: List<First> = emptyList()
-     var onClickListener: (First) -> Unit = {}
+    var onClickListener: (First) -> Unit = {}
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): FirstDishViewHolder {
-        val binding = RowFirstDishBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            RowFirstDishBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return FirstDishViewHolder(binding)
     }
 
     @SuppressLint("SuspiciousIndentation")
-    override fun onBindViewHolder(holder:FirstDishViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: FirstDishViewHolder, position: Int) {
         val item = firstDishList[position]
 
-           holder.rootView.setOnClickListener {
+        holder.rootView.setOnClickListener {
             onClickListener.invoke(item)
         }
         holder.nameTextView.text = item.name
@@ -45,7 +46,8 @@ class FirstDishListAdapter:RecyclerView.Adapter<FirstDishListAdapter.FirstDishVi
         notifyDataSetChanged()
     }
 
-    inner class FirstDishViewHolder(binding:RowFirstDishBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class FirstDishViewHolder(binding: RowFirstDishBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         val rootView = binding.root
         val nameTextView = binding.tvFirstDishName
         val firstDishImageView = binding.ivFirstDishPlate

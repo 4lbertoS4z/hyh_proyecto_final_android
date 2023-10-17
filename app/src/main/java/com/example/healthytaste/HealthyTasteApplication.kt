@@ -6,11 +6,11 @@ import com.example.healthytaste.di.dishModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
-class HealthyTasteApplication: Application() {
+class HealthyTasteApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        startKoin{
+        startKoin {
             androidContext(this@HealthyTasteApplication)
             modules(listOf(baseModule, dishModule)).allowOverride(true)
         }

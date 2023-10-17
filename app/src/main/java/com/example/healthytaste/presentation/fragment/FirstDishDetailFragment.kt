@@ -78,10 +78,10 @@ class FirstDishDetailFragment : Fragment() {
             .into(binding.ivAllergies)
         binding.tvElaboration.text = firstDish.details.elaboration
 
-        // Obtén la ID del video de YouTube y guárdala en videoId
+
         videoId = firstDish.details.urlVideo
 
-        // Configura el reproductor de YouTube
+
         val youTubePlayerView = binding.youtubePlayerView
         lifecycle.addObserver(youTubePlayerView)
 

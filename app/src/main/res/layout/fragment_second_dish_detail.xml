@@ -60,7 +60,7 @@
             android:layout_marginBottom="@dimen/margin_medium"
             app:layout_constraintBottom_toTopOf="@+id/tv_elaboration_tittle"
             app:layout_constraintStart_toStartOf="@+id/tv_ingredients_tittle"
-            app:layout_constraintTop_toBottomOf="@+id/tv_ingredients_tittle"/>
+            app:layout_constraintTop_toBottomOf="@+id/tv_ingredients_tittle" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_elaboration_tittle"
@@ -80,8 +80,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_medium"
-            android:textSize="@dimen/text_medium"
             android:textAlignment="textStart"
+            android:textSize="@dimen/text_medium"
             app:layout_constraintBottom_toTopOf="@+id/tv_allergies_tittle"
             app:layout_constraintStart_toStartOf="@+id/tv_elaboration_tittle"
             app:layout_constraintTop_toBottomOf="@+id/tv_elaboration_tittle"

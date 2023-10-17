@@ -37,6 +37,7 @@ class SecondDishDetailFragment : Fragment() {
 
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViewModel()
@@ -77,10 +78,10 @@ class SecondDishDetailFragment : Fragment() {
             .into(binding.ivAllergies)
         binding.tvElaboration.text = secondDish.details.elaboration
 
-        // Obtén la ID del video de YouTube y guárdala en videoId
+
         videoId = secondDish.details.urlVideo
 
-        // Configura el reproductor de YouTube
+
         val youTubePlayerView = binding.youtubePlayerView
         lifecycle.addObserver(youTubePlayerView)
 

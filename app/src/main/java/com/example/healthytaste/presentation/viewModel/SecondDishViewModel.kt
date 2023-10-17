@@ -15,7 +15,8 @@ import kotlinx.coroutines.withContext
 
 typealias SecondDishListState = ResourceState<List<SecondDish>>
 typealias SecondDishDetailState = ResourceState<SecondDish>
-class SecondDishViewModel (
+
+class SecondDishViewModel(
     private val secondDishUseCase: GetSecondDishUseCase,
     private val secondDishDetailUseCase: GetSecondDishDetailUseCase
 ) : ViewModel() {
@@ -27,6 +28,7 @@ class SecondDishViewModel (
     fun getSecondDishLiveData(): LiveData<SecondDishListState> {
         return secondDishMutableLiveData
     }
+
     fun getSecondDishDetailLiveData(): LiveData<SecondDishDetailState> {
         return secondDishDetailMutableLiveData
     }
