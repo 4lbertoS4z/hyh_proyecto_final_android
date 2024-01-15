@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.healthytaste.R
@@ -18,7 +19,8 @@ import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 
 class FirstDishFragment : Fragment() {
-
+    private lateinit var searchView:SearchView
+    private var lastSearchQuery: String? = null
     private val binding: FragmentFirstDishBinding by lazy {
         FragmentFirstDishBinding.inflate(layoutInflater)
     }
@@ -38,8 +40,9 @@ class FirstDishFragment : Fragment() {
 
         initViewModel()
         initUI()
-
+        setupSearchView()
         firstDishViewModel.fetchFirstDishList()
+
     }
 
     private fun initUI() {
@@ -54,7 +57,21 @@ class FirstDishFragment : Fragment() {
             )
         }
     }
+    private fun setupSearchView() {
+        searchView = binding.searchView // Asegúrate de tener esta referencia
 
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                firstDishListAdapter.filter.filter(newText)
+                lastSearchQuery = newText
+                return true
+            }
+        })
+    }
     private fun initViewModel() {
         firstDishViewModel.getFirstDishLiveData().observe(viewLifecycleOwner) { state ->
             handleFirstDishListState(state)
@@ -64,16 +81,20 @@ class FirstDishFragment : Fragment() {
     private fun handleFirstDishListState(state: FirstDishListState) {
         when (state) {
             is ResourceState.Loading -> {
-                binding.pbFirstDishList.visibility = View.VISIBLE
+                binding.pbFirstDishLoading.visibility = View.VISIBLE
             }
 
             is ResourceState.Success -> {
-                binding.pbFirstDishList.visibility = View.GONE
+                binding.pbFirstDishLoading.visibility = View.GONE
                 firstDishListAdapter.submitList(state.result)
+                lastSearchQuery?.let {
+                    searchView.setQuery(it, false)
+                    firstDishListAdapter.filter.filter(it)
+                }
             }
 
             is ResourceState.Error -> {
-                binding.pbFirstDishList.visibility = View.GONE
+                binding.pbFirstDishLoading.visibility = View.GONE
                 showErrorDialog(state.error)
             }
         }

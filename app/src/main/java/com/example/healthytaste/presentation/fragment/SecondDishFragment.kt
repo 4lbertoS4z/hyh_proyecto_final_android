@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.healthytaste.R
@@ -18,7 +19,8 @@ import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 
 class SecondDishFragment : Fragment() {
-
+    private lateinit var searchView: SearchView
+    private var lastSearchQuery: String? = null
     private val binding: FragmentSecondDishBinding by lazy {
         FragmentSecondDishBinding.inflate(layoutInflater)
     }
@@ -39,8 +41,9 @@ class SecondDishFragment : Fragment() {
 
         initViewModel()
         initUI()
-
+        setupSearchView()
         secondDishViewModel.fetchSecondDishList()
+
     }
 
     private fun initUI() {
@@ -54,6 +57,22 @@ class SecondDishFragment : Fragment() {
                 )
             )
         }
+    }
+
+    private fun setupSearchView() {
+        searchView = binding.searchView // Asegúrate de tener esta referencia
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                secondDishListAdapter.filter.filter(newText)
+                lastSearchQuery = newText
+                return true
+            }
+        })
     }
 
     private fun initViewModel() {
@@ -71,6 +90,10 @@ class SecondDishFragment : Fragment() {
             is ResourceState.Success -> {
                 binding.pbSecondDishLoading.visibility = View.GONE
                 secondDishListAdapter.submitList(state.result)
+                lastSearchQuery?.let {
+                    searchView.setQuery(it, false)
+                    secondDishListAdapter.filter.filter(it)
+                }
             }
 
             is ResourceState.Error -> {

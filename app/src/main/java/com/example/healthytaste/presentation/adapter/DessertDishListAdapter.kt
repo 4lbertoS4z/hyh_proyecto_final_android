@@ -3,14 +3,17 @@ package com.example.healthytaste.presentation.adapter
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.healthytaste.databinding.RowDessertDishBinding
 import com.example.healthytaste.model.DessertDish
 
 class DessertDishListAdapter :
-    RecyclerView.Adapter<DessertDishListAdapter.DessertDishViewHolder>() {
+    RecyclerView.Adapter<DessertDishListAdapter.DessertDishViewHolder>(), Filterable {
     private var dessertDishList: List<DessertDish> = emptyList()
+    private var dessertDishListFiltered: List<DessertDish> = dessertDishList
     var onClickListener: (DessertDish) -> Unit = {}
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DessertDishViewHolder {
         val binding =
@@ -19,7 +22,7 @@ class DessertDishListAdapter :
     }
 
     override fun getItemCount(): Int {
-        return dessertDishList.size
+        return dessertDishListFiltered.size
     }
 
     override fun onBindViewHolder(holder: DessertDishViewHolder, position: Int) {
@@ -37,9 +40,32 @@ class DessertDishListAdapter :
     @SuppressLint("NotifyDataSetChanged")
     fun submitList(list: List<DessertDish>) {
         dessertDishList = list
+        dessertDishListFiltered = list
         notifyDataSetChanged()
     }
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val charString = constraint.toString()
+                dessertDishListFiltered = if (charString.isEmpty()) {
+                    dessertDishList
+                } else {
+                    val filteredList = dessertDishList.filter {
+                        it.name.contains(charString, ignoreCase = true)
+                    }
+                    filteredList
+                }
+                val filterResults = FilterResults()
+                filterResults.values = dessertDishListFiltered
+                return filterResults
+            }
 
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                dessertDishListFiltered = results?.values as List<DessertDish>
+                notifyDataSetChanged()
+            }
+        }
+    }
     inner class DessertDishViewHolder(binding: RowDessertDishBinding) :
         RecyclerView.ViewHolder(binding.root) {
         val rootView = binding.root

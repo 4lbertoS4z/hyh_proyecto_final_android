@@ -1,7 +1,7 @@
 package com.example.healthytaste.data.common
 
 
-const val BASE_URL = "https://healthytaste-bb33f-default-rtdb.firebaseio.com/"
+const val BASE_URL = "https://api-cocina-default-rtdb.europe-west1.firebasedatabase.app/"
 const val FIRST_DISH = "first.json"
 const val FIRST_DISH_DETAIL = "first/{firstDishId}.json"
 const val SECOND_DISH = "seconds.json"
