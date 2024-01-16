@@ -21,6 +21,7 @@
 
     <!-- region image -->
     <dimen name="image_dish_list_size">120dp</dimen>
+    <dimen name="image_xxl_size">350dp</dimen>
     <dimen name="image_large_size">250dp</dimen>
     <dimen name="image_medium_size">200dp</dimen>
     <dimen name="image_icon_size">100dp</dimen>

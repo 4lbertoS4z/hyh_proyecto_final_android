@@ -9,3 +9,7 @@ const val SECOND_DISH_DETAIL = "seconds/{secondDishId}.json"
 const val DESSERT_DISH = "desserts.json"
 const val DESSERT_DISH_DETAIL = "desserts/{dessertDishId}.json"
 const val KCAL_CALCULATOR = "https://652c014f965ca701d4db2aa9--calm-nasturtium-d94e29.netlify.app/"
+const val DAILY_CALORIES = 2000.0
+const val DAILY_PROTEINS = 50.0
+const val DAILY_FATS = 70.0
+const val DAILY_SUGARS = 310.0

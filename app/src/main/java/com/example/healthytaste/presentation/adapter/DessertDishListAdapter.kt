@@ -25,12 +25,14 @@ class DessertDishListAdapter :
         return dessertDishListFiltered.size
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: DessertDishViewHolder, position: Int) {
         val item = dessertDishList[position]
         holder.rootView.setOnClickListener {
             onClickListener.invoke(item)
         }
         holder.nameTextView.text = item.name
+        holder.numPersonsTextView.text = "Comensales: ${item.numPersons.toString()}"
 
         Glide.with(holder.secondDishImageView)
             .load(item.image)
@@ -71,5 +73,6 @@ class DessertDishListAdapter :
         val rootView = binding.root
         val nameTextView = binding.tvDessertDishName
         val secondDishImageView = binding.ivDessertDishPlate
+        val numPersonsTextView = binding.tvDessertDishNumPersons
     }
 }

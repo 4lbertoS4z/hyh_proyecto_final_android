@@ -77,6 +77,9 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics-ktx")
     implementation("com.google.firebase:firebase-messaging-ktx")
 
+    // MPAndroidChart
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
     //Lottie
     implementation("com.airbnb.android:lottie:6.1.0")
 

@@ -26,12 +26,12 @@ class FirstDishListAdapter : RecyclerView.Adapter<FirstDishListAdapter.FirstDish
         return FirstDishViewHolder(binding)
     }
 
-    @SuppressLint("SuspiciousIndentation")
+    @SuppressLint("SuspiciousIndentation", "SetTextI18n")
     override fun onBindViewHolder(holder: FirstDishViewHolder, position: Int) {
         val item = firstDishListFiltered[position]
         holder.rootView.setOnClickListener { onClickListener.invoke(item) }
         holder.nameTextView.text = item.name
-
+        holder.numPersonsTextView.text = "Comensales: ${item.numPersons.toString()}"
         Glide.with(holder.firstDishImageView.context)
             .load(item.image)
             .into(holder.firstDishImageView)
@@ -76,5 +76,6 @@ class FirstDishListAdapter : RecyclerView.Adapter<FirstDishListAdapter.FirstDish
         val rootView = binding.root
         val nameTextView = binding.tvFirstDishName
         val firstDishImageView = binding.ivFirstDishPlate
+        val numPersonsTextView = binding.tvFirstDishNumPersons
     }
 }

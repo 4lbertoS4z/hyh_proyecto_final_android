@@ -40,7 +40,22 @@
             app:layout_constraintBottom_toBottomOf="@+id/iv_first_dish_plate"
             app:layout_constraintStart_toEndOf="@+id/iv_first_dish_plate"
             app:layout_constraintTop_toTopOf="@+id/iv_first_dish_plate"
+            app:layout_constraintVertical_bias="0.255"
             tools:text="Dish title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_first_dish_num_persons"
+            android:layout_width="@dimen/text_layout_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tv_first_dish_name"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/iv_first_dish_plate"
+            app:layout_constraintTop_toTopOf="@+id/tv_first_dish_name"
+            tools:text="Dish num Persons:" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

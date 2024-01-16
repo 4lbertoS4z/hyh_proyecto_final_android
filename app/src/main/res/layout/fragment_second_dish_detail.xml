@@ -105,9 +105,31 @@
             android:layout_height="@dimen/image_icon_size"
             android:layout_marginStart="@dimen/margin_medium"
             android:layout_marginBottom="@dimen/margin_medium"
+            app:layout_constraintBottom_toTopOf="@+id/barChart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_allergies_tittle"
+            tools:srcCompat="@tools:sample/avatars"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_nutrition_tittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="% nutricional por persona"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/text_large"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/barChart"
+            app:layout_constraintStart_toStartOf="@+id/iv_allergies"
+            app:layout_constraintTop_toBottomOf="@+id/iv_allergies" />
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/barChart"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/image_xxl_size"
             app:layout_constraintBottom_toTopOf="@+id/youtube_player_view"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_allergies_tittle" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_nutrition_tittle"
+            tools:srcCompat="@tools:sample/avatars"/>
+
 
         <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
             android:id="@+id/youtube_player_view"
@@ -116,7 +138,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_allergies" />
+            app:layout_constraintTop_toBottomOf="@+id/barChart"
+            tools:srcCompat="@tools:sample/avatars"/>
 
         <ProgressBar
             android:id="@+id/pb_second_dish_detail"

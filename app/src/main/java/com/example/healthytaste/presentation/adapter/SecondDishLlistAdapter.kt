@@ -24,12 +24,14 @@ class SecondDishLlistAdapter : RecyclerView.Adapter<SecondDishLlistAdapter.Secon
         return secondDishListFiltered.size
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: SecondDishViewHolder, position: Int) {
         val item = secondDishListFiltered[position]
         holder.rootView.setOnClickListener {
             onClickListener.invoke(item)
         }
         holder.nameTextView.text = item.name
+        holder.numPersonsTextView.text = "Comensales: ${item.numPersons.toString()}"
 
         Glide.with(holder.secondDishImageView)
             .load(item.image)
@@ -70,5 +72,6 @@ class SecondDishLlistAdapter : RecyclerView.Adapter<SecondDishLlistAdapter.Secon
         val rootView = binding.root
         val nameTextView = binding.tvSecondDishName
         val secondDishImageView = binding.ivSecondDishPlate
+        val numPersonsTextView = binding.tvSecondDishNumPersons
     }
 }
